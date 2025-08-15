@@ -1,0 +1,1403 @@
+<html>
+
+<head>
+
+<style>
+
+.annotation_table {
+    color: #000000;
+    font-family: monospace;
+    margin: 5px;
+    width: 100%;
+}
+
+/* override JupyterLab style */
+.annotation_table td {
+    text-align: left;
+    background-color: transparent; 
+    padding: 1px;
+}
+
+.annotation_table code
+{
+    background-color: transparent; 
+    white-space: normal;
+}
+
+/* End override JupyterLab style */
+
+tr:hover {
+    background-color: rgba(92, 200, 249, 0.25);
+}
+
+td.object_tag summary ,
+td.lifted_tag summary{
+    font-weight: bold;
+    display: list-item;
+}
+
+span.lifted_tag {
+    color: #00cc33;
+}
+
+span.object_tag {
+    color: #cc3300;
+}
+
+
+td.lifted_tag {
+    background-color: #cdf7d8;
+}
+
+td.object_tag {
+    background-color: #ffd3d3;
+}
+
+code.ir_code {
+    color: grey;
+    font-style: italic;
+}
+
+.metadata {
+    border-bottom: medium solid black;
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+}
+
+.annotations {
+padding: 5px;
+}
+
+.hidden {
+display: none;
+}
+
+.buttons {
+padding: 10px;
+cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: sum_of_squares_numba<br />
+        in file: /Users/erolrecep/Desktop/numba-tutorial/lesson02_numba_cpu_parallel.py<br />
+        with signature: (Array(float64, 1, &#39;C&#39;, False, aligned=True),) -&gt; float64
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                13:
+                                @njit
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;arr = arg(0, name=arr)  :: array(float64, 1d, C)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                <tr><td style=" padding-left: 22px;" class="">
+                        <code>
+                            14:
+                            def sum_of_squares_numba(arr):
+                        </code>
+                    </td></tr>
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                15:
+                                &nbsp;&nbsp;&nbsp;&nbsp;total = 0.0
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total = const(float, 0.0)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total.2 = total  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del total<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                16:
+                                &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(arr)):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$6load_global.1 = global(range: &lt;class &#39;range&#39;&gt;)  :: Function(&lt;class &#39;range&#39;&gt;)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$8load_global.2 = global(len: &lt;built-in function len&gt;)  :: Function(&lt;built-in function len&gt;)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$12call_function.4 = call $8load_global.2(arr, func=$8load_global.2, args=[Var(arr, lesson02_numba_cpu_parallel.py:13)], kws=(), vararg=None, varkwarg=None, target=None)  :: (Array(float64, 1, &#39;C&#39;, False, aligned=True),) -&gt; int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $8load_global.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$14call_function.5 = call $6load_global.1($12call_function.4, func=$6load_global.1, args=[Var($12call_function.4, lesson02_numba_cpu_parallel.py:16)], kws=(), vararg=None, varkwarg=None, target=None)  :: (int64,) -&gt; range_state_int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $6load_global.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $12call_function.4<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$16get_iter.6 = getiter(value=$14call_function.5)  :: range_iter_int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $14call_function.5<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$phi18.0 = $16get_iter.6  :: range_iter_int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $16get_iter.6<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;jump 18<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 18<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$18for_iter.1 = iternext(value=$phi18.0)  :: pair&lt;int64, bool&gt;<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$18for_iter.2 = pair_first(value=$18for_iter.1)  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$18for_iter.3 = pair_second(value=$18for_iter.1)  :: bool<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $18for_iter.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$phi20.1 = $18for_iter.2  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $18for_iter.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;branch $18for_iter.3, 20, 44<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 20<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $18for_iter.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;i = $phi20.1  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi20.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                17:
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += arr[i] * arr[i]
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$28binary_subscr.5 = getitem(value=arr, index=i, fn=&lt;built-in function getitem&gt;)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$34binary_subscr.8 = getitem(value=arr, index=i, fn=&lt;built-in function getitem&gt;)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del i<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$36binary_multiply.9 = $28binary_subscr.5 * $34binary_subscr.8  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $34binary_subscr.8<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $28binary_subscr.5<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$38inplace_add.10 = inplace_binop(fn=&lt;built-in function iadd&gt;, immutable_fn=&lt;built-in function add&gt;, lhs=total.2, rhs=$36binary_multiply.9, static_lhs=Undefined, static_rhs=Undefined)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $36binary_multiply.9<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total.1 = $38inplace_add.10  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $38inplace_add.10<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total.2 = total.1  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del total.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;jump 18<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                18:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return total
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 44<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del arr<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi20.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi18.0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $18for_iter.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$46return_value.1 = cast(value=total.2)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del total.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func0_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $46return_value.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: sum_of_squares_parallel<br />
+        in file: /Users/erolrecep/Desktop/numba-tutorial/lesson02_numba_cpu_parallel.py<br />
+        with signature: (Array(float64, 1, &#39;C&#39;, False, aligned=True),) -&gt; float64
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                21:
+                                @njit(parallel=True)
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;arr = arg(0, name=arr)  :: array(float64, 1d, C)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;arr_shape.0 = getattr(value=arr, attr=shape)  :: UniTuple(int64 x 1)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;arr_size0.1 = static_getitem(value=arr_shape.0, index=0, index_var=None, fn=&lt;built-in function getitem&gt;)  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;del arr_shape.0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                <tr><td style=" padding-left: 22px;" class="">
+                        <code>
+                            22:
+                            def sum_of_squares_parallel(arr):
+                        </code>
+                    </td></tr>
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                23:
+                                &nbsp;&nbsp;&nbsp;&nbsp;total = 0.0
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total = const(float, 0.0)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;total.2 = total  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del total<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                24:
+                                &nbsp;&nbsp;&nbsp;&nbsp;for i in prange(len(arr)):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;id=0[LoopNest(index_variable = parfor_index.2, range = (0, arr_size0.1, 1))]{20: &lt;ir.Block at /Users/erolrecep/Desktop/numba-tutorial/lesson02_numba_cpu_parallel.py (24)&gt;}Var(parfor_index.2, lesson02_numba_cpu_parallel.py:24)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del arr<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                <tr><td style=" padding-left: 22px;" class="">
+                        <code>
+                            25:
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += arr[i] * arr[i]
+                        </code>
+                    </td></tr>
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                26:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return total
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$46return_value.1 = cast(value=total.2)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del total.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func1_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $46return_value.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: impl<br />
+        in file: /Users/erolrecep/.virtualenvs/parallel/lib/python3.10/site-packages/numba/np/arrayobj.py<br />
+        with signature: (UniTuple(int64, 1), dtype(float64)) -&gt; array(float64, 1d, C)
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4454:
+                                def impl(shape, dtype=float):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;shape = arg(0, name=shape)  :: UniTuple(int64 x 1)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;dtype = arg(1, name=dtype)  :: dtype(float64)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4455:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return numpy_empty_nd(shape, dtype, retty)
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$2load_global.0 = global(numpy_empty_nd: &lt;intrinsic numpy_empty_nd&gt;)  :: Function(&lt;intrinsic numpy_empty_nd&gt;)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$8load_deref.3 = freevar(retty: array(float64, 1d, C))  :: typeref[array(float64, 1d, C)]<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$10call_function.4 = call $2load_global.0(shape, dtype, $8load_deref.3, func=$2load_global.0, args=[Var(shape, arrayobj.py:4454), Var(dtype, arrayobj.py:4454), Var($8load_deref.3, arrayobj.py:4455)], kws=(), vararg=None, varkwarg=None, target=None)  :: (UniTuple(int64, 1), dtype(float64), typeref[array(float64, 1d, C)]) -&gt; array(float64, 1d, C)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del shape<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del dtype<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $8load_deref.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $2load_global.0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$12return_value.5 = cast(value=$10call_function.4)  :: array(float64, 1d, C)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $10call_function.4<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func2_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $12return_value.5<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: impl<br />
+        in file: /Users/erolrecep/.virtualenvs/parallel/lib/python3.10/site-packages/numba/np/arrayobj.py<br />
+        with signature: (typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;], int64, uint32) -&gt; memory-managed *void*
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4325:
+                                def impl(cls, allocsize, align):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;cls = arg(0, name=cls)  :: typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;]<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;del cls<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;allocsize = arg(1, name=allocsize)  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;align = arg(2, name=align)  :: uint32<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4326:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return intrin_alloc(allocsize, align)
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$2load_global.0 = global(intrin_alloc: &lt;intrinsic intrin_alloc&gt;)  :: Function(&lt;intrinsic intrin_alloc&gt;)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$8call_function.3 = call $2load_global.0(allocsize, align, func=$2load_global.0, args=[Var(allocsize, arrayobj.py:4325), Var(align, arrayobj.py:4325)], kws=(), vararg=None, varkwarg=None, target=None)  :: (int64, uint32) -&gt; memory-managed *void*<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del allocsize<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del align<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $2load_global.0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$10return_value.4 = cast(value=$8call_function.3)  :: memory-managed *void*<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $8call_function.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func3_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $10return_value.4<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: _call_allocator<br />
+        in file: /Users/erolrecep/.virtualenvs/parallel/lib/python3.10/site-packages/numba/np/arrayobj.py<br />
+        with signature: (typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;], int64, uint32) -&gt; memory-managed *void*
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4330:
+                                def _call_allocator(arrtype, size, align):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;arrtype = arg(0, name=arrtype)  :: typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;]<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;size = arg(1, name=size)  :: int64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;align = arg(2, name=align)  :: uint32<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                <tr><td style=" padding-left: 22px;" class="">
+                        <code>
+                            4331:
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#34;&#34;&#34;Trampoline to call the intrinsic used for allocation
+                        </code>
+                    </td></tr><tr><td style=" padding-left: 22px;" class="">
+                        <code>
+                            4332:
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#34;&#34;&#34;
+                        </code>
+                    </td></tr>
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                4333:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return arrtype._allocate(size, align)
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$4load_method.1 = getattr(value=arrtype, attr=_allocate)  :: BoundFunction((typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;], &#39;_allocate&#39;) for typeref[&lt;class &#39;numba.core.types.npytypes.Array&#39;&gt;])<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del arrtype<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$10call_method.4 = call $4load_method.1(size, align, func=$4load_method.1, args=[Var(size, arrayobj.py:4330), Var(align, arrayobj.py:4330)], kws=(), vararg=None, varkwarg=None, target=None)  :: (int64, uint32) -&gt; memory-managed *void*<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del size<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del align<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $4load_method.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$12return_value.5 = cast(value=$10call_method.4)  :: memory-managed *void*<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $10call_method.4<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func4_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $12return_value.5<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: __numba_parfor_gufunc_0x103302bf0<br />
+        in file: <string><br />
+        with signature: [Array(uint64, 1, &#39;C&#39;, False, aligned=True), Array(float64, 1, &#39;C&#39;, False, aligned=True), Array(float64, 1, &#39;C&#39;, False, aligned=True)] -&gt; none
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore"></table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+        
+
+        <div class="metadata">
+        Function name: reduction_add<br />
+        in file: /Users/erolrecep/.virtualenvs/parallel/lib/python3.10/site-packages/numba/parfors/parfor_lowering.py<br />
+        with signature: (uint64, Array(float64, 1, &#39;C&#39;, False, aligned=True), float64) -&gt; float64
+        </div>
+
+        <div class="annotations">
+
+        <table class="annotation_table tex2jax_ignore">
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                575:
+                                def reduction_add(thread_count, redarr, init):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;
+                                            label 0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;thread_count = arg(0, name=thread_count)  :: uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;redarr = arg(1, name=redarr)  :: array(float64, 1d, C)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;
+                                            &nbsp;&nbsp;init = arg(2, name=init)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                576:
+                                &nbsp;&nbsp;&nbsp;&nbsp;c = init
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;c = init  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del init<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;c.2 = c  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del c<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                577:
+                                &nbsp;&nbsp;&nbsp;&nbsp;for i in range(thread_count):
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$6load_global.1 = global(range: &lt;class &#39;range&#39;&gt;)  :: Function(&lt;class &#39;range&#39;&gt;)<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$10call_function.3 = call $6load_global.1(thread_count, func=$6load_global.1, args=[Var(thread_count, parfor_lowering.py:575)], kws=(), vararg=None, varkwarg=None, target=None)  :: (uint64,) -&gt; range_state_uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del thread_count<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $6load_global.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$12get_iter.4 = getiter(value=$10call_function.3)  :: range_iter_uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $10call_function.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$phi14.0 = $12get_iter.4  :: range_iter_uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $12get_iter.4<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;jump 14<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 14<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$14for_iter.1 = iternext(value=$phi14.0)  :: pair&lt;uint64, bool&gt;<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$14for_iter.2 = pair_first(value=$14for_iter.1)  :: uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$14for_iter.3 = pair_second(value=$14for_iter.1)  :: bool<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $14for_iter.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$phi16.1 = $14for_iter.2  :: uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $14for_iter.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;branch $14for_iter.3, 16, 32<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 16<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $14for_iter.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;i = $phi16.1  :: uint64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi16.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                578:
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c += redarr[i]
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$24binary_subscr.5 = getitem(value=redarr, index=i, fn=&lt;built-in function getitem&gt;)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del i<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$26inplace_add.6 = inplace_binop(fn=&lt;built-in function iadd&gt;, immutable_fn=&lt;built-in function add&gt;, lhs=c.2, rhs=$24binary_subscr.5, static_lhs=Undefined, static_rhs=Undefined)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $24binary_subscr.5<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;c.1 = $26inplace_add.6  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $26inplace_add.6<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;c.2 = c.1  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del c.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;jump 14<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                
+                    <tr><td class="">
+                        <details>
+                            <summary>
+                                <code>
+                                579:
+                                &nbsp;&nbsp;&nbsp;&nbsp;return c
+                                </code>
+                            </summary>
+                            <table class="annotation_table">
+                                <tbody>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            label 32<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del redarr<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi16.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $phi14.0<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del $14for_iter.3<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;$34return_value.1 = cast(value=c.2)  :: float64<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;del c.2<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr>
+                                        <tr class="ir_code func6_ir">
+                                            <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;return $34return_value.1<span class="object_tag"></span>
+                                            </code>
+                                            </td>
+                                        </tr></tbody>
+                            </table>
+                            </details>
+                    </td></tr>
+                </table>
+        </div>
+
+        <br /><br /><br />
+
+    
+
+</body>
+
+</html>
